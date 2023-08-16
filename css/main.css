@@ -545,8 +545,9 @@ header .container nav ul a:hover {
 
 .flex {
   display: flex;
-  justify-content: space-between;
+  gap: 10rem;
   width: 100%;
+  justify-content: center;
 }
 @media (min-width: 360px) and (max-width: 959px) {
   .flex {
