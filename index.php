@@ -21,21 +21,31 @@
 
     <link rel="stylesheet" href="./css/plugins.css" />
     <link rel="stylesheet" href="./css/main.css" />
-    <title>Unialfa</title>
+    <link rel="stylesheet" href="./css/override.css" />
+    <title>Seja um parceiro UNIALFA EaD</title>
+    <meta name="description" content="Invista em Educação Digital. Seja um parceiro UNIALFA EaD. Mais de 20 anos de experiência no ramo do Ensino Superior.">
+    
+    <meta property="og:title" content="Seja um parceiro UNIALFA EaD" />
+	<meta property="og:description" content="Invista em Educação Digital. Seja um parceiro UNIALFA EaD. Mais de 20 anos de experiência no ramo do Ensino Superior." />
+	<meta property="og:type" content="company" />
+	<meta property="og:url" content="https://<?php echo $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];?>" />
+	<meta property="og:image" content="https://<?php echo $_SERVER['HTTP_HOST'];?>/img/facebook.png" />
+	<meta property="og:site_name" content="UNIALFA" />
+	<meta property="fb:admins" content="1066108721" />
   </head>
 
   <body>
     <header>
       <div class="container">
-        <img src="./svg/unialfa-logo.svg" alt="Logo da Unialfa" />
+        <a href="https://www.unialfa.com.br" target="_blank"><img src="./svg/unialfa-logo.svg" alt="Logo da Unialfa" /></a>
         <nav>
           <ul>
-            <li><a href="#">DIFERENCIAIS</a></li>
-            <li><a href="#">POR QUE INVESTIR</a></li>
-            <li><a href="#">MODELO DE NEGÓCIOS</a></li>
-            <li><a href="#">ETAPAS</a></li>
+            <li><a href="#diferenciais">DIFERENCIAIS</a></li>
+            <li><a href="#porqueinvestir">POR QUE INVESTIR</a></li>
+            <li><a href="#modelodenegocios">MODELO DE NEGÓCIOS</a></li>
+            <li><a href="#etapas">ETAPAS</a></li>
           </ul>
-          <a href="#" class="button-red-default">Cadastre-se</a>
+          <a href="javascript:;" onclick="$('.modal').fadeIn();" class="button-red-default">Cadastre-se</a>
         </nav>
       </div>
     </header>
@@ -60,7 +70,7 @@
       <!-- <div class="ornament"></div> -->
     </section>
 
-    <section class="s-highlights">
+    <section class="s-highlights" id="diferenciais">
       <div class="container">
         <div class="card-w-title">
           <h2>23 anos</h2>
@@ -99,7 +109,7 @@
       </div>
     </section>
 
-    <section class="s-why">
+    <section class="s-why" id="porqueinvestir">
       <div class="container">
         <h2>
           Por que investir em um <br />
@@ -153,7 +163,7 @@
       </div>
     </section>
 
-    <section class="s-our-work">
+    <section class="s-our-work" id="modelodenegocios">
       <div class="container">
         <h2>Nosso Modelo de Negócios</h2>
         <div class="flex">
@@ -187,7 +197,7 @@
         </div>
       </div>
     </section>
-
+    <?php /*
     <section class="s-testimonials">
       <div class="container">
         <h2>Opinião dos nossos alunos</h2>
@@ -245,8 +255,9 @@
         </div>
       </div>
     </section>
+    */ ?>
 
-    <section class="s-steps">
+    <section class="s-steps" id="etapas">
       <h2 class="container">Etapas para se tornar um Polo EaD</h2>
       <ul class="container">
         <li>
@@ -307,19 +318,53 @@
       </div>
       <div class="container">
         <h2>Abra seu Polo UNIALFA</h2>
-        <a href="" class="button-big"> Quero me cadastrar </a>
+        <a href="javascript:;" onclick="$('.modal').fadeIn();" class="button-big"> Quero me cadastrar </a>
         <p class="cta-wp">
           Ou fale com um consultor pelo <a href="#">WhatsApp</a>
         </p>
       </div>
     </section>
 
+    <section class="modal">
+    	<div class="modal-bg" onclick="$('.modal').fadeOut();"></div>
+    	<div class="modal-content">
+    		<form method="post" class="form subscribe formulario-validacao">
+    			<h1>Abra seu Polo UNIALFA</h1>
+    			<dl>
+    				<dt>Seu nome</dt>
+    				<dd><input type="text" name="nome" class="obg" /></dd>
+    			</dl>
+    			<dl>
+    				<dt>Telefone</dt>
+    				<dd><input type="text" name="telefone" class="celular obg" /></dd>
+    			</dl>
+    			<dl>
+    				<dt>E-mail</dt>
+    				<dd><input type="email" name="email" class="obg" /></dd>
+    			</dl>
+    			<dl>
+    				<dt>Curso(s) de interesse</dt>
+    				<dd>
+    					<textarea name="curso" class="obg"></textarea>
+    				</dd>
+    			</dl>
+    			<dl>
+    				<dd><button type="submit">Enviar</button></dd>
+    			</dl>
+    		</form>
+    	</div>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="js/jquery.validacao.js"></script>
+    <script src="js/jquery.sweetalert.js"></script>
+    <script src="js/jquery.inputmask.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/all.js"></script>
 
     <script>
       /* swiper */
-
       var swiper = new Swiper(".swiper-container", {
         slidesPerView: 1,
         spaceBetween: 10,
